@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #1e1e2f;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-brand {
+    padding: 20px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #2d2d44;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 15px 0;
+}
+
+.nav-top, .nav-bottom {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 25px;
+    color: #b3b3cc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-link i {
+    font-size: 1.1rem;
+}
+
+.nav-link:hover {
+    background-color: #2b2b40;
+    color: #ffffff;
+}
+
+.logout-link {
+    color: #ff6b6b;
+}
+
+.logout-link:hover {
+    background-color: #3d2429;
+    color: #ff8787;
+}
+
+.profile-img {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    color: #ffffff;
+}
+
+.profile-img i {
+    font-size: 1.5rem;
+}
+
+.profile-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 30px;
+    width: 100%;
+    transition: margin-left 0.3s ease;
+}
+
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #1e1e2f;
+    cursor: pointer;
+    padding: 0 0 15px 0;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+}
